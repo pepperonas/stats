@@ -27,30 +27,13 @@
 
 ---
 
-A single-command system dashboard that renders CPU, memory, disk, network, top processes, and live history charts directly in your terminal. No browser, no GUI, no config needed.
+<div align="center">
+<img src="https://raw.githubusercontent.com/pepperonas/stats/main/stats.png" alt="stats dashboard screenshot" width="800"/>
+</div>
 
-```
-┌──────────── CPU ─────────────┐ ┌────────── Memory ───────────┐
-│   Core 0 ████████░░░░ 42.3%  │ │ RAM used █████████░░░ 56.2% │
-│   Core 1 ██████████░░ 81.0%  │ │          8.8G / 15.6G       │
-│   Core 2 ███░░░░░░░░░ 12.7%  │ │     Swap ██░░░░░░░░░  8.4% │
-│   Core 3 █████████░░░ 71.5%  │ │          0.3G / 4.0G        │
-│    Total ███████░░░░░ 51.9%  │ └─────────────────────────────┘
-│    Steal ░░░░░░░░░░░░  0.0%  │
-└──────────────────────────────┘
-┌─────── CPU History (60s) ────┐ ┌──── Network History (60s) ───┐
-│ ⡇⠀⡀⠀⢀⡀⠀⣰⣀⠀⡀⠀⢀⣀⣰⡀⠀⣀⠀⡀⣀⣰ │ │ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀ │
-│ ⡇⣸⡇⡸⠘⡆⢸⠁⠈⣇⡇⠀⡜⠁⠈⠹⡄⡸⠱⣼⠃⠈⡆ │ │ ⠀⠀⣰⡀⠀⣴⠀⠀⣰⠹⡆⠀⣷⠀⠀⣠⡀⡞⠈⣇ │
-│ ⣇⠇⢹⠇⠀⢹⡎⠀⠀⠸⡇⢰⠃⠀⠀⠀⢻⠇⠀⠀⠀⠀⡇ │ │ ⣴⡀⡏⢧⢠⠏⡆⣠⠃⠀⢳⡼⠘⡆⢠⠏⢱⠇⠀⠸⡄ │
-│ ⠈⠀⠀⠀⠀⠀⠁⠀⠀⠀⠁⠈⠀⠀⠀⠀⠈⠀⠀⠀⠀⠈ │ │ ⠈⢧⠃⠈⢾⠀⢱⠏⠀⠀⠀⠁⠀⢹⡞⠀⠀⠀⠀⠀⠀ │
-└──────────────────────────────┘ └──────────────────────────────┘
-┌────────────── Top Processes ─────────────────────────────────┐
-│   PID   Name                  CPU%    MEM%      RSS          │
-│  1234   node server.js        89.2     3.1     498M          │
-│  5678   python scraper.py     45.1     2.4     384M          │
-│   890   postgres              12.3     1.8     289M          │
-└──────────────────────────────────────────────────────────────┘
-```
+---
+
+A single-command system dashboard that renders CPU, memory, disk, network, top processes, and live history charts directly in your terminal. No browser, no GUI, no config needed.
 
 ## Features
 
