@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stats-dashboard"
+version = "1.0.0"
+description = "Beautiful terminal server dashboard with real-time charts"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Martin Pfeffer", email = "support@celox.io" },
+]
+keywords = [
+    "terminal", "dashboard", "monitoring", "system", "cpu", "memory",
+    "server", "devops", "sysadmin", "tui", "charts", "cli",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Monitoring",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "psutil>=5.9",
+    "plotext>=5.2",
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/pepperonas/stats"
+Repository = "https://github.com/pepperonas/stats"
+Issues = "https://github.com/pepperonas/stats/issues"
+
+[project.scripts]
+stats = "stats.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["stats*"]
