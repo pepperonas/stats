@@ -285,7 +285,7 @@ def render_dashboard():
         header,
         ("  " + time.strftime("%Y-%m-%d %H:%M:%S"), "dim"),
         (f"  v{__version__}", "dim italic"),
-        ("  (bottled 🍻 by Martin Pfeffer)", "dim"),
+        ("  (bottled 🍻 by Martin Pfeffer - celox.io)", "dim"),
     )
 
     grid = Table.grid(expand=True, padding=(0, 1))
