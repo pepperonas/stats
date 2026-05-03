@@ -119,32 +119,38 @@ stats -l -i 2
 
 ## Screenshots
 
-### Snapshot Mode (`stats`)
-
-```
- STATS DASHBOARD   2026-05-03 08:13:36  v1.0.0
-
- celox (Linux)    Load: 1.94 / 4.95 / 6.52  (4 CPUs)    Up: 2d 9h 50m    Procs: 286
-
-╭──────────────── CPU ────────────────╮ ╭─────────────── Memory ───────────────╮
-│       Core 0 ██████████████████░░░░ │ │     RAM used █████████████████░░░░░░ │
-│              44.4%                  │ │              35.6%                   │
-│       Core 1 ██████████████████████ │ │              5.6G / 15.6G           │
-│              100.0%                 │ │                                      │
-│       Core 2 ███████████████████░░░ │ │         Swap █████████████░░░░░░░░░░ │
-│              68.7%                  │ │              32.7%                   │
-│       Core 3 ████████████░░░░░░░░░░ │ │              1.3G / 4.0G            │
-│              35.0%                  │ ╰──────────────────────────────────────╯
-│        Total ████████████████░░░░░░ │
-│              62.3%                  │
-│        Steal ░░░░░░░░░░░░░░░░░░░░░░ │
-│              0.0%                   │
-╰─────────────────────────────────────╯
-```
-
 ### Live Mode (`stats -l`)
 
 Live mode renders real-time CPU and network history as line charts, auto-updating every second. Press `Ctrl+C` to exit.
+
+## Health Report (optional)
+
+`stats` includes a companion script for automated server health monitoring. When deployed on a server, it can generate a PDF health report and send it via email on a schedule.
+
+**What the health report covers:**
+
+- Overall status with traffic-light ratings (OK / WARNING / CRITICAL)
+- CPU, steal time, load, RAM, swap, disk — each evaluated against configurable thresholds
+- SAR trend data (CPU & steal over time)
+- Per-core CPU breakdown
+- Network totals and connection count
+- Top processes by CPU usage
+- Docker container resource usage
+
+**Default thresholds:**
+
+| Metric | Warning | Critical |
+|--------|---------|----------|
+| CPU | 80% | 95% |
+| Steal | 5% | 20% |
+| RAM | 85% | 95% |
+| Swap | 50% | 80% |
+| Disk | 80% | 90% |
+| Load | 2x CPUs | 4x CPUs |
+
+When a threshold is breached, the email subject is prefixed with `[WARNING]` or `[CRITICAL]` for easy filtering.
+
+**Setup:** The health report script requires SMTP credentials and is not included in the pip package. See [examples/celox-health-report.example.py](examples/celox-health-report.example.py) for a template. Pair it with a systemd timer or cron job for automated scheduling.
 
 ## How It Works
 
